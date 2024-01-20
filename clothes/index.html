@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Clothing Merchant Shop</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"> <img src="logo.png" >
+        WEAVERS VASTRA</div>
+      <ul>
+        <li><a href="#home">Home </a></li>
+        <li><a href="#products">Products </a></li>
+        <li><a href="#about">AboutUs </a></li>
+        <li><a href="#contact">Contact </a></li>
+        <li><button onclick="openCart()">View Cart </button></li>
+        <li><button onclick="openAccountModal()">My Account </button></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+       <h1>Welcome to Our Clothing Merchant Shop</h1> 
+      <p>Discover the latest fashion trends and shop from a wide range of clothing items.</p>
+    </section>
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="product" id="product1">
+        <img src="product1.jpeg" alt="Product 1">
+        <h3>Mens Casual Wear Full Sleeve Grey Plain Cotton Shirt Collar Style: Straight
+        </h3>
+        <p>The grey shirt is crafted in full sleeve pattern with cotton material that makes it the best option to select for any occasion. This t-shirt is designed in plain pattern with a straight collar design which is more suitable for men especially in summer seasons. It is available in XS, S, M, L, XL that gives more variety of sizes which makes it one of the best choice to add in your wardrobe. These grey plain shirts are prepared in 14 inches of shoulder size, which is a good option for casual occasions as well.</p>
+        <button onclick="addToCart('product1')">Add to Cart</button>
+      </div>
+      <div class="product" id="product2">
+        <img src="product2.jpeg" alt="Product 2">
+        <h3>Jeans</h3>
+        <p>RAGZO
+          Lightly Washed Slim Fit Jeans</p>
+        <button onclick="addToCart('product2')">Add to Cart</button>
+      </div>
+      <div class="product" id="product3">
+        <img src="product3.jpeg" alt="Product 3">
+        <h3>BLAZZER</h3>
+        <p>Multi Color Full Sleeves Regular Fit Dry Cleaning Plain Pattern Boys Blazzer</p>
+        <button onclick="addToCart('product3')">Add to Cart</button>
+      </div>
+      <div class="product" id="product4">
+        <img src="product4.jpeg" alt="Product 4">
+        <h3>T SHIRTS</h3>
+        <p>Full Sleeves T Shirts for Men: Color Block Mens Tshirt, Round Neck T Shirt in Pure Cotton - Ideal for Casual Wear and Everyday Use - Available in Maroon, Navy Blue & Black - Tshart Man, T-Shirt for Men, Tshirts Shirts for Men, Cotton Tshirt, T-Shirts Men, T-Shirts Boy</p>
+        <button onclick="addToCart('product4')">Add to Cart</button>
+      </div>
+      <div class="product" id="product5">
+        <img src="product5.jpeg" alt="Product 5">
+        <h3>REDWOLF PREMIUM HOODIE</h3>
+        <p>The artwork will be screen printed to perfection on a premium Redwolf branded brushed fleece hoodie featuring kangaroo pockets, drawstrings and a hood.</p>
+        <button onclick="addToCart('product5')">Add to Cart</button>
+      </div>
+      <!-- Add more product items as needed -->
+    </section>
+    
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Welcome to Clothing Shop, where fashion meets passion! Our journey began with a simple vision – to provide an exceptional shopping experience for individuals seeking the latest trends and timeless styles.
+      
+      At Clothing Shop, we believe that clothing is not just a way to cover the body; it's a form of self-expression. Our curated collection showcases a diverse range of apparel, carefully selected to cater to various tastes and preferences. Whether you're into contemporary chic, casual comfort, or bold statements, we've got something for everyone.</p>
+    
+      <p>Our team is comprised of fashion enthusiasts dedicated to staying ahead of the curve. We keep a keen eye on global trends, ensuring that our inventory is always fresh, exciting, and in line with the latest fashion movements.</p>
+    
+      <p>Quality and customer satisfaction are at the core of what we do. Each piece in our collection undergoes rigorous quality checks to ensure you receive not just a piece of clothing but a wardrobe staple that lasts. We value your trust, and we are committed to delivering a seamless shopping experience from browsing to delivery.</p>
+    
+      <p>As a brand, we are not just about selling clothes; we are about creating a community of fashion-forward individuals who embrace their uniqueness. Join us in celebrating the art of self-expression through fashion, and let Clothing Shop be your go-to destination for all things style.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>We would love to hear from you! Feel free to reach out using the contact information below:</p>
+    
+      <div class="contact-info">
+        <p><strong>Email:</strong> info@clothingshop.com</p>
+        <p><strong>Phone:</strong> +91 458287569</p>
+        <p><strong>Address:</strong> Sanskriti Town, Lakhimpur-kheri, Uttar Pradesh</p>
+      </div>
+    
+      <p>If you have any questions, suggestions, or feedback, don't hesitate to get in touch. Our dedicated support team is here to assist you.</p>
+    
+      <button onclick="openContactModal()">Open Contact Form</button>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Clothing Merchant Shop</p>
+  </footer>
+
+  <!-- Modal for Contact Us -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeContactModal()">&times;</span>
+      <h2>Contact Form</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" onclick="submitForm()">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="accountModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAccountModal()">&times;</span>
+      <h2>User Account</h2>
+      <div id="accountContent">
+        <!-- User account content will be displayed here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for interactivity -->
+  <script src="script.js"></script>
+</body>
+</html>
